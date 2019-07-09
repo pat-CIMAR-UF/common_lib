@@ -113,7 +113,7 @@ static double bbIoU(const BoundingBox& box1, const BoundingBox& box2) {
     double inter_x =
         std::min(box1.x_max, box2.x_max) - std::max(box1.x_min, box2.x_min);
     double inter_y =
-        std::min(box1.x_max, box2.x_max) - std::max(box1.x_min, box2.x_min);
+        std::min(box1.y_max, box2.y_max) - std::max(box1.y_min, box2.y_min);
     double intersection = inter_x * inter_y;
     return intersection / (area1 + area2 - intersection);
 }
